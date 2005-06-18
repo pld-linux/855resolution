@@ -1,13 +1,13 @@
-# TODO:
-# - init script to call the program every time on boot
 Summary:	Change the resolution of an available vbios mode for the 855/865/915 Intel graphic chipset
 Name:		855resolution
 Version:	0.4
-Release:	0.5
+Release:	0.8
 License:	Public Domain
 Group:		Applications/System
 Source0:	http://perso.wanadoo.fr/apoirier/%{name}-%{version}.tgz
 # Source0-md5:	12237e534def7dd3579a3e8b0a4b9351
+Source1:	%{name}.sysconfig
+Source2:	%{name}.init
 URL:		http://perso.wanadoo.fr/apoirier/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,14 +42,26 @@ rc.local, local.start ... file of your Linux version.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_sbindir}
+install -d $RPM_BUILD_ROOT{%{_sbindir},/etc/{rc.d/init.d,sysconfig}}
 
 install 855resolution $RPM_BUILD_ROOT%{_sbindir}
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/sysconfig/%{name}
+install %{SOURCE2} $RPM_BUILD_ROOT/etc/rc.d/init.d/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+/sbin/chkconfig --add 855resolution
+
+%preun
+if [ "$1" = "0" ]; then
+	/sbin/chkconfig --del 855resolution
+fi
+
 %files
 %defattr(644,root,root,755)
 %doc CHANGES.txt README.txt
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
+%attr(754,root,root) /etc/rc.d/init.d/%{name}
 %attr(755,root,root) %{_sbindir}/*
