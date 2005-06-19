@@ -1,3 +1,5 @@
+# TODO
+# - fix initscript description
 Summary:	Change the resolution of an available vbios mode for the 855/865/915 Intel graphic chipset
 Name:		855resolution
 Version:	0.4
