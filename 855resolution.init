@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# 855resolution	This shell script takes care of setting date from ntp server on startup
+# 855resolution	Change the resolution of an available vbios mode for the 855/865/915 Intel graphic chipset
 #
 # chkconfig:	2345 15 89
 # description:	set resolution for your laptop
@@ -13,7 +13,6 @@
 if [ ! -f /etc/sysconfig/855resolution ]; then
 	exit 0
 fi
-
 
 # See how we were called.
 case "$1" in
