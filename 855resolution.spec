@@ -1,6 +1,7 @@
 # TODO
 # - fix initscript description
 Summary:	Change the resolution of an available vbios mode for the 855/865/915 Intel graphic chipset
+Summary(pl):	Zmiana rozdzielczo¶ci dostêpnych trybów vbios dla chipsetów Intel 855/865/915
 Name:		855resolution
 Version:	0.4
 Release:	0.8
@@ -11,14 +12,16 @@ Source0:	http://perso.wanadoo.fr/apoirier/%{name}-%{version}.tgz
 Source1:	%{name}.sysconfig
 Source2:	%{name}.init
 URL:		http://perso.wanadoo.fr/apoirier/
+PreReq:		rc-scripts
+Requires(post,preun):	/sbin/chkconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 855resolution is a software to change the resolution of an available
-vbios mode for the 855/865/915 Intel graphic chipset. I coded it to
-get the 1400x1050 resolution on my Dell 510.
+vbios mode for the 855/865/915 Intel graphic chipset. It was
+originally coded it to get the 1400x1050 resolution on Dell 510.
 
-Later it was tested with succes on the following laptops:
+Later it was tested with success on the following laptops:
 - Acer Travelmate 291lmi
 - Acer TravelMate 661LCi
 - Acer Travelmate 662
@@ -29,10 +32,31 @@ Later it was tested with succes on the following laptops:
 - Fujitsu LifeBook P5010D
 - Fujitsu E4010
 
-It patches only the RAM version of the video bios so the new
+It patches only the RAM version of the video BIOS so the new
 resolution is loose each time you reboot. If you want to set the
-resolution each time you reboot and before to launch X, use your
-rc.local, local.start ... file of your Linux version.
+resolution each time you reboot and before to launch X, use
+appropriate init script file of your Linux version.
+
+%description -l pl
+855resolution to program do zmiany rozdzielczo¶ci dostêpnych trybów
+vbios dla chipsetów graficznych Intel 855/865/915. Pierwotnie by³
+napisany w celu uzyskania rozdzielczo¶ci 1400x1050 na Dellu 510.
+
+Pó¼niej zosta³ pozytywnie przetestowany na nastêpuj±cych laptopach:
+- Acer Travelmate 291lmi
+- Acer TravelMate 661LCi
+- Acer Travelmate 662
+- Asus M3N
+- Dell Inspiron 500m
+- Dell Inspiron 510m
+- Dell Inspiron 700m
+- Fujitsu LifeBook P5010D
+- Fujitsu E4010
+
+Program modyfikuje tylko wersjê w RAM Video BIOS-u, wiêc nowa
+rozdzielczo¶æ jest tracona po ka¿dym reboocie. Aby ustawiaæ
+rozdzielczo¶æ po ka¿dym uruchomieniem komputera, a przed uruchomieniem
+X, nale¿y u¿yæ odpowiedniego skryptu inicjalizuj±cego.
 
 %prep
 %setup -q -n %{name}
