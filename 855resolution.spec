@@ -1,5 +1,5 @@
 Summary:	Change the resolution of an available vbios mode for the 855/865/915 Intel graphic chipset
-Summary(pl):	Zmiana rozdzielczo¶ci dostêpnych trybów vbios dla chipsetów Intel 855/865/915
+Summary(pl.UTF-8):   Zmiana rozdzielczoÅ›ci dostÄ™pnych trybÃ³w vbios dla chipsetÃ³w Intel 855/865/915
 Name:		855resolution
 Version:	0.4
 Release:	0.8
@@ -36,12 +36,12 @@ resolution is loose each time you reboot. If you want to set the
 resolution each time you reboot and before to launch X, use
 appropriate init script file of your Linux version.
 
-%description -l pl
-855resolution to program do zmiany rozdzielczo¶ci dostêpnych trybów
-vbios dla chipsetów graficznych Intel 855/865/915. Pierwotnie by³
-napisany w celu uzyskania rozdzielczo¶ci 1400x1050 na Dellu 510.
+%description -l pl.UTF-8
+855resolution to program do zmiany rozdzielczoÅ›ci dostÄ™pnych trybÃ³w
+vbios dla chipsetÃ³w graficznych Intel 855/865/915. Pierwotnie byÅ‚
+napisany w celu uzyskania rozdzielczoÅ›ci 1400x1050 na Dellu 510.
 
-Pó¼niej zosta³ pozytywnie przetestowany na nastêpuj±cych laptopach:
+PÃ³Åºniej zostaÅ‚ pozytywnie przetestowany na nastÄ™pujÄ…cych laptopach:
 - Acer Travelmate 291lmi
 - Acer TravelMate 661LCi
 - Acer Travelmate 662
@@ -52,10 +52,10 @@ Pó¼niej zosta³ pozytywnie przetestowany na nastêpuj±cych laptopach:
 - Fujitsu LifeBook P5010D
 - Fujitsu E4010
 
-Program modyfikuje tylko wersjê w RAM Video BIOS-u, wiêc nowa
-rozdzielczo¶æ jest tracona po ka¿dym reboocie. Aby ustawiaæ
-rozdzielczo¶æ po ka¿dym uruchomieniem komputera, a przed uruchomieniem
-X, nale¿y u¿yæ odpowiedniego skryptu inicjalizuj±cego.
+Program modyfikuje tylko wersjÄ™ w RAM Video BIOS-u, wiÄ™c nowa
+rozdzielczoÅ›Ä‡ jest tracona po kaÅ¼dym reboocie. Aby ustawiaÄ‡
+rozdzielczoÅ›Ä‡ po kaÅ¼dym uruchomieniem komputera, a przed uruchomieniem
+X, naleÅ¼y uÅ¼yÄ‡ odpowiedniego skryptu inicjalizujÄ…cego.
 
 %prep
 %setup -q -n %{name}
