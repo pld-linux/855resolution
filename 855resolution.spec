@@ -2,7 +2,7 @@ Summary:	Change the resolution of an available vbios mode for the 855/865/915 In
 Summary(pl.UTF-8):	Zmiana rozdzielczości dostępnych trybów vbios dla chipsetów Intel 855/865/915
 Name:		855resolution
 Version:	0.4
-Release:	0.8
+Release:	1
 License:	Public Domain
 Group:		Applications/System
 Source0:	http://perso.wanadoo.fr/apoirier/%{name}-%{version}.tgz
@@ -10,8 +10,8 @@ Source0:	http://perso.wanadoo.fr/apoirier/%{name}-%{version}.tgz
 Source1:	%{name}.sysconfig
 Source2:	%{name}.init
 URL:		http://perso.wanadoo.fr/apoirier/
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
+Requires:	rc-scripts
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
