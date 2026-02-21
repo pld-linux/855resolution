@@ -1,0 +1,10 @@
+--- 855resolution/Makefile~	2005-05-08 17:27:59.000000000 +0200
++++ 855resolution/Makefile	2026-02-21 11:17:35.733336652 +0100
+@@ -13,7 +13,6 @@
+ LDLIBS:=-lm
+ 
+ CFLAGS:=-Wall -I`pwd` -DVERSION='"${VERSION}"' -DPLUGINS='${PLUGINS_LIST}' -DREF_PLUGINS='${PLUGINS_ADDR}' ${VBIOS_FILE}
+-LDFLAGS:=-s
+ 
+ all: ${PRG}
+ 
